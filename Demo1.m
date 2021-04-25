@@ -43,6 +43,8 @@ title("Sine wave")
 xlabel("Time")
 ylabel("Amplitude")
 
+% X axis and then Y axis, can play with the axis
+axis([0 100 -4 4])
 
 % rows, collumns, position
 subplot(2, 1 , 2)
