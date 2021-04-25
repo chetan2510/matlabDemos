@@ -1,5 +1,32 @@
+% Creating an array
 array = [1 2 2; 10 8 8; 8 7 9];
+% clc and clear all
 
+% String initialisation
 string = 'Hello World';
+
+% Print
+disp(array);
+
+%  For loop
+for i =1:10
+    disp(i);
+    
+end
+
+% Subtract
+a = [1 2 3; 9 8 7];
+b = [5 8 9; 8 7 4];
+sub = a - b;
+
+
+% Transposing
+a = a';
+
+% Multiplying by itself
+a = a.*
+
+
+
 
 
