@@ -6,6 +6,8 @@ numberOfSamples = 1000;
 % Is the number of points you are observing per second
 samplingFrequency = 200;
 
+% SIG#SYS#STOCHASTIC
+
 % 1/200 = 0.005
 %  1000/200 = 5
 % AP
