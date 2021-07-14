@@ -120,3 +120,39 @@ plot(tausR, correlationOfRectSignal, 'b');
 title("Auto correlated Rectaged signal");
 xlabel("\taus");
 ylabel("x(t) * x(t)");
+
+% Calculating the Pdf of noise
+
+% Step 1: Sortig the noise
+sortedNoise = sort(noise);
+lengthOfSortedNoise = length(sortedNoise);
+
+% Step 2: Finding the maximum and minimum value of noise
+maxValueInNoise = max(sortedNoise);
+minValueInNoise = min(sortedNoise);
+
+% Step 3: Creating the x-axis
+xaxis = linspace(minValueInNoise, maxValueInNoise, length(noise)*0.5);
+lenghtOfXAxis = length(xaxis);
+
+% Step 4: Creating pdf array, initializing the values with zero
+pdf = zeros(size(xaxis));
+% Step 5: Calculating the probability
+
+for i = 1:lenghtOfXAxis - 1
+    randomVariableLength = 0;
+    for j = 1: lengthOfSortedNoise
+        if(sortedNoise(j) > xaxis(i) && sortedNoise(j) < xaxis(i + 1))
+            randomVariableLength = randomVariableLength + 1; %incrementing the length of the random variable
+        end
+    end
+    pdf(i) = randomVariableLength/lengthOfSortedNoise; % calculates probability of the random variable
+end
+
+pdf(i+1) = length(find(sortedNoise > xaxis(i) & sortedNoise < xaxis(i)))/ lengthOfSortedNoise;
+figure2=figure('Position', [200, 200, 2024, 2200]); % to have a bigger plot on
+stem(xaxis, pdf);
+xlim([-0.2 0.2]);
+title("PDF of noise");
+xlabel("Random Noise");
+ylabel("Probability");
