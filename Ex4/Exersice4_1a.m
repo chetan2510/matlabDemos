@@ -72,16 +72,35 @@ grid on;
 
 %% Effect of changing the number of samples and the sampling frequency on Power Specral Density 
 % 
-% (i) If we decrease the sampling frequency in time domain keeping the number
-% of samples constant, the distance between the sample points in the
-% frequency domain decreases. 
-% Therefore, by decreasing sampling frequency in time domain, we can
-% obtain much sharper plot of the power spectral density.
-%
-% (ii) If we increase the number of samples keeping the sampling frequency in
-% time domain constant, the distance between the sample points in the
-% frequency domain decreases. Therefore by 
-% increasing the number of samples, we can obtain much sharper plot 
-% of the power spectral density.
+% (i) If we decrease the sampling frequency keeping the number
+% of samples constant, the distance between the increment points in the
+% frequency axis decreases. 
 
+%
+% (ii) If we increase the number of samples keeping the sampling frequency
+% constant, the distance between the increment points in the
+% frequency axis decreases. The more points are sampled and lower the
+% frequency resolution Fs/N
+
+% Sampling frequency and Samples decide the frequency resolution of
+% frequency spectrum in PSD. The limits of the frequency range of frequency
+% spectrum are -[(Fs/2)-(Fs/N)] to [(Fs/2)-(Fs/N)]. In the above example,
+
+% case (a) Fs 1000Hz has frequency range -500 to 500Hz: The frequencies of the signal
+% that will show up in PSD are 5Hz and 18Hz. The frequency spectrum is
+% redundantly long.
+
+% case (b) Fs 500Hz has frequency range -200 to 200Hz: Much comprehensible than
+% the above case
+
+% case (c) Fs 200Hz has frequency range -100 to 100Hz: Better in
+% comprehension than above case.
+
+% Fs and N are adjusted according to the example in hand. In real time 
+% applications, a larger Fs requires a stronger, expensive converter. The
+% data in real applications have a fixed N. This decides the limits and 
+% constraints of chosing Fs and N. The more the Fs the
+
+% The goal of this exercise is to witness the effect of changing Fs and N
+% on PSD. And concluding which Fs and N will lead to a sharper PSD.
 
